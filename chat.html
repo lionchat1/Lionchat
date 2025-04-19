@@ -1,26 +1,28 @@
-
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>الدردشة - Loin Chat</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>الدردشة</title>
+  <style>
+    body { font-family: Arial; background-color: #fff; margin: 0; }
+    .navbar { background-color: #222; color: white; padding: 10px; display: flex; justify-content: space-around; }
+    .chat-list, .story-bar, .chat-window { padding: 20px; }
+    .chat-item { border-bottom: 1px solid #ddd; padding: 10px; cursor: pointer; }
+    .chat-window { display: none; }
+  </style>
 </head>
-<body class="chat">
-  <div class="chat-container">
-    <header>
-      <img src="logo.png" alt="Logo" class="chat-logo">
-      <h2>محادثة</h2>
-    </header>
-    <div class="messages">
-      <div class="message sent">مرحباً! كيف حالك؟</div>
-      <div class="message received">أنا بخير، وأنت؟</div>
-    </div>
-    <form class="message-form">
-      <input type="text" placeholder="اكتب رسالة..." required>
-      <button type="submit">إرسال</button>
-    </form>
+<body>
+  <div class="navbar">
+    <span>القصص</span>
+    <span>الدردشات</span>
+    <span>الإعدادات</span>
+  </div>
+  <div class="chat-list">
+    <div class="chat-item">أحمد</div>
+    <div class="chat-item">ليلى</div>
+  </div>
+  <div class="chat-window">
+    <!-- تفاصيل الدردشة الفردية هنا -->
   </div>
 </body>
 </html>

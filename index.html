@@ -2,73 +2,20 @@
 <html lang="ar">
 <head>
   <meta charset="UTF-8">
-  <title>الصيانة</title>
+  <title>تسجيل الدخول</title>
   <style>
-    body {
-      background-color: #111;
-      color: white;
-      font-family: 'Arial', sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      flex-direction: column;
-    }
-
-    .triangle {
-      width: 0;
-      height: 0;
-      border-left: 100px solid transparent;
-      border-right: 100px solid transparent;
-      border-bottom: 173px solid orange;
-      position: relative;
-      animation: pulse 1.5s infinite;
-    }
-
-    .triangle::before {
-      content: "!";
-      position: absolute;
-      top: 35%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 4em;
-      color: #111;
-      font-weight: bold;
-    }
-
-    .message {
-      margin-top: 30px;
-      text-align: center;
-    }
-
-    .message h1 {
-      font-size: 2em;
-      background: linear-gradient(45deg, orange, red);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 10px;
-    }
-
-    .message p {
-      color: #ccc;
-      font-size: 1.2em;
-      margin: 5px 0;
-    }
-
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-      100% { transform: scale(1); }
-    }
+    body { font-family: Arial; background-color: #f3f3f3; text-align: center; padding: 50px; }
+    input { padding: 10px; margin: 10px; width: 80%; max-width: 300px; }
+    button { padding: 10px 20px; margin: 10px; background-color: orange; border: none; color: white; cursor: pointer; }
+    a { display: block; margin-top: 10px; color: blue; }
   </style>
 </head>
 <body>
-  <div class="triangle"></div>
-  <div class="message">
-    <h1>السيرفر تحت الصيانة</h1>
-    <p>نعود قريباً</p>
-    <p>نعمل على إصلاح الأخطاء وتحسين الأداء</p>
-  </div>
+  <h2>تسجيل الدخول</h2>
+  <input type="email" placeholder="البريد الإلكتروني"><br>
+  <input type="password" placeholder="كلمة المرور"><br>
+  <button>تسجيل الدخول</button>
+  <a href="#">هل نسيت كلمة السر؟</a>
+  <a href="register.html">إنشاء حساب جديد</a>
 </body>
 </html>
