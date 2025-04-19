@@ -1,22 +1,47 @@
-
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Loin Chat - الصفحة الرئيسية</title>
+  <meta charset="UTF-8">
+  <title>Loin Chat - تسجيل حساب</title>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js"></script>
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="home">
-  <div class="home-container">
-    <img src="logo.png" alt="Loin Chat Logo" class="home-logo">
-    <h1>مرحباً بك في Loin Chat</h1>
-    <nav>
-      <a href="login.html">تسجيل الدخول</a>
-      <a href="chat.html">الدردشة</a>
-      <a href="stories.html">القصص اليومية</a>
-      <a href="profile.html">الملف الشخصي</a>
-    </nav>
+<body>
+  <div class="register-box">
+    <h1>إنشاء حساب في Loin Chat</h1>
+    <input type="email" id="email" placeholder="البريد الإلكتروني" required>
+    <input type="password" id="password" placeholder="كلمة المرور" required>
+    <button onclick="register()">تسجيل الحساب</button>
+    <p id="status"></p>
   </div>
+
+  <script>
+    const firebaseConfig = {
+      apiKey: "YOUR_API_KEY",
+      authDomain: "YOUR_PROJECT.firebaseapp.com",
+      projectId: "YOUR_PROJECT_ID",
+      storageBucket: "YOUR_PROJECT.appspot.com",
+      messagingSenderId: "SENDER_ID",
+      appId: "APP_ID"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+
+    function register() {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+      const status = document.getElementById("status");
+
+      auth.createUserWithEmailAndPassword(email, password)
+        .then(userCredential => {
+          status.innerText = "تم إنشاء الحساب بنجاح!";
+        })
+        .catch(error => {
+          status.innerText = "خطأ: " + error.message;
+        });
+    }
+  </script>
 </body>
 </html>
