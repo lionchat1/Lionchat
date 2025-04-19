@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>إنشاء حساب - LoinChat</title>
+  <style>
+    body {
+      font-family: Arial;
+      background-color: #f0f0f0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 400px;
+      margin: auto;
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    input, select, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background-color: #ff5722;
+      color: white;
+      border: none;
+    }
+    h2 {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>إنشاء حساب</h2>
+    <form>
+      <input type="text" placeholder="الاسم الأول" required />
+      <input type="text" placeholder="الاسم الأخير" required />
+
+      <label>تاريخ الميلاد:</label>
+      <select name="day" required>
+        <option value="">اليوم</option>
+        <!-- الأيام من 1 إلى 31 -->
+        <!-- توليد يدوي -->
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+        <option value="23">23</option>
+        <option value="24">24</option>
+        <option value="25">25</option>
+        <option value="26">26</option>
+        <option value="27">27</option>
+        <option value="28">28</option>
+        <option value="29">29</option>
+        <option value="30">30</option>
+        <option value="31">31</option>
+      </select>
+
+      <select name="month" required>
+        <option value="">الشهر</option>
+        <option value="1">يناير</option>
+        <option value="2">فبراير</option>
+        <option value="3">مارس</option>
+        <option value="4">أبريل</option>
+        <option value="5">مايو</option>
+        <option value="6">يونيو</option>
+        <option value="7">يوليو</option>
+        <option value="8">أغسطس</option>
+        <option value="9">سبتمبر</option>
+        <option value="10">أكتوبر</option>
+        <option value="11">نوفمبر</option>
+        <option value="12">ديسمبر</option>
+      </select>
+
+      <select name="year" required>
+        <option value="">السنة</option>
+        <!-- توليد سنوات من 2025 إلى 1950 -->
+        <!-- مختصرة هنا، أضيف لك بعضها كمثال -->
+        <option value="2025">2025</option>
+        <option value="2024">2024</option>
+        <option value="2023">2023</option>
+        <option value="2022">2022</option>
+        <option value="2021">2021</option>
+        <option value="2020">2020</option>
+        <option value="2019">2019</option>
+        <!-- أكمل حتى 1950 إذا أردت -->
+        <option value="2000">2000</option>
+        <option value="1990">1990</option>
+        <option value="1980">1980</option>
+        <option value="1970">1970</option>
+        <option value="1960">1960</option>
+        <option value="1950">1950</option>
+      </select>
+
+      <input type="email" placeholder="البريد الإلكتروني" required />
+      <input type="password" placeholder="كلمة المرور" required />
+      <input type="password" placeholder="تأكيد كلمة المرور" required />
+      <button type="submit">تسجيل</button>
+    </form>
+  </div>
+</body>
+</html>
