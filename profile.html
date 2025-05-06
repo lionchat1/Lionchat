@@ -1,18 +1,169 @@
-
 <!DOCTYPE html>
 <html lang="ar">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>الملف الشخصي - Loin Chat</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>إنشاء حساب</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, #43cea2, #185a9d);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      direction: rtl;
+      overflow-y: auto;
+      padding: 20px;
+    }
+
+    .register-card {
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(12px);
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      max-width: 500px;
+      animation: fadeSlide 0.8s ease;
+    }
+
+    @keyframes fadeSlide {
+      from {
+        transform: translateY(30px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    h2 {
+      text-align: center;
+      color: white;
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group {
+      position: relative;
+      margin-bottom: 1.2rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: #fff;
+    }
+
+    input {
+      width: 100%;
+      padding: 0.75rem 2.5rem 0.75rem 1rem;
+      border: none;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+      transition: 0.3s;
+    }
+
+    input:focus {
+      outline: none;
+      background-color: rgba(255, 255, 255, 0.3);
+      box-shadow: 0 0 10px #ffffff66;
+    }
+
+    i {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      color: #ddd;
+    }
+
+    .register-btn {
+      width: 100%;
+      padding: 0.75rem;
+      background-color: #ffffff;
+      color: #185a9d;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .register-btn:hover {
+      background-color: #e0f0ff;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px #ffffff44;
+    }
+
+    .register-btn:active {
+      transform: scale(0.98);
+    }
+  </style>
 </head>
-<body class="profile">
-  <div class="profile-container">
-    <img src="logo.png" class="profile-pic" alt="User Picture">
-    <h2>اسم المستخدم</h2>
-    <p>الحالة: متصل</p>
-    <button>تعديل الملف</button>
+<body>
+  <div class="register-card">
+    <h2>إنشاء حساب جديد</h2>
+    <form>
+      <div class="form-group">
+        <label>الاسم الأول</label>
+        <input type="text" required />
+        <i class="fas fa-user"></i>
+      </div>
+
+      <div class="form-group">
+        <label>الكنية</label>
+        <input type="text" required />
+        <i class="fas fa-user-tag"></i>
+      </div>
+
+      <div class="form-group">
+        <label>تاريخ الميلاد</label>
+        <input type="text" placeholder="YYYY-MM-DD" required />
+        <i class="fas fa-calendar"></i>
+      </div>
+
+      <div class="form-group">
+        <label>البريد الإلكتروني</label>
+        <input type="email" required />
+        <i class="fas fa-envelope"></i>
+      </div>
+
+      <div class="form-group">
+        <label>رقم الهاتف</label>
+        <input type="tel" required />
+        <i class="fas fa-phone"></i>
+      </div>
+
+      <div class="form-group">
+        <label>البريد الإلكتروني للاسترداد</label>
+        <input type="email" required />
+        <i class="fas fa-envelope-open"></i>
+      </div>
+
+      <div class="form-group">
+        <label>كلمة المرور</label>
+        <input type="password" required />
+        <i class="fas fa-lock"></i>
+      </div>
+
+      <div class="form-group">
+        <label>تأكيد كلمة المرور</label>
+        <input type="password" required />
+        <i class="fas fa-lock"></i>
+      </div>
+
+      <button class="register-btn" type="submit">إنشاء الحساب</button>
+    </form>
   </div>
 </body>
 </html>
