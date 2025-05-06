@@ -1,124 +1,168 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
 <head>
-  <meta charset="UTF-8">
-  <title>إنشاء حساب - LoinChat</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>إنشاء حساب</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
     body {
-      font-family: Arial;
-      background-color: #f0f0f0;
+      margin: 0;
+      background: linear-gradient(135deg, #43cea2, #185a9d);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      direction: rtl;
+      overflow-y: auto;
       padding: 20px;
     }
-    .container {
-      max-width: 400px;
-      margin: auto;
-      background-color: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
-    }
-    input, select, button {
+
+    .register-card {
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(12px);
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
       width: 100%;
-      padding: 10px;
-      margin-top: 10px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
+      max-width: 500px;
+      animation: fadeSlide 0.8s ease;
     }
-    button {
-      background-color: #ff5722;
-      color: white;
-      border: none;
+
+    @keyframes fadeSlide {
+      from {
+        transform: translateY(30px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
     }
+
     h2 {
       text-align: center;
+      color: white;
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group {
+      position: relative;
+      margin-bottom: 1.2rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: #fff;
+    }
+
+    input {
+      width: 100%;
+      padding: 0.75rem 2.5rem 0.75rem 1rem;
+      border: none;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+      transition: 0.3s;
+    }
+
+    input:focus {
+      outline: none;
+      background-color: rgba(255, 255, 255, 0.3);
+      box-shadow: 0 0 10px #ffffff66;
+    }
+
+    i {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      color: #ddd;
+    }
+
+    .register-btn {
+      width: 100%;
+      padding: 0.75rem;
+      background-color: #ffffff;
+      color: #185a9d;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .register-btn:hover {
+      background-color: #e0f0ff;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px #ffffff44;
+    }
+
+    .register-btn:active {
+      transform: scale(0.98);
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h2>إنشاء حساب</h2>
+  <div class="register-card">
+    <h2>إنشاء حساب جديد</h2>
     <form>
-      <input type="text" placeholder="الاسم الأول" required />
-      <input type="text" placeholder="الاسم الأخير" required />
+      <div class="form-group">
+        <label>الاسم الأول</label>
+        <input type="text" required />
+        <i class="fas fa-user"></i>
+      </div>
 
-      <label>تاريخ الميلاد:</label>
-      <select name="day" required>
-        <option value="">اليوم</option>
-        <!-- الأيام من 1 إلى 31 -->
-        <!-- توليد يدوي -->
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-        <option value="9">9</option>
-        <option value="10">10</option>
-        <option value="11">11</option>
-        <option value="12">12</option>
-        <option value="13">13</option>
-        <option value="14">14</option>
-        <option value="15">15</option>
-        <option value="16">16</option>
-        <option value="17">17</option>
-        <option value="18">18</option>
-        <option value="19">19</option>
-        <option value="20">20</option>
-        <option value="21">21</option>
-        <option value="22">22</option>
-        <option value="23">23</option>
-        <option value="24">24</option>
-        <option value="25">25</option>
-        <option value="26">26</option>
-        <option value="27">27</option>
-        <option value="28">28</option>
-        <option value="29">29</option>
-        <option value="30">30</option>
-        <option value="31">31</option>
-      </select>
+      <div class="form-group">
+        <label>الكنية</label>
+        <input type="text" required />
+        <i class="fas fa-user-tag"></i>
+      </div>
 
-      <select name="month" required>
-        <option value="">الشهر</option>
-        <option value="1">يناير</option>
-        <option value="2">فبراير</option>
-        <option value="3">مارس</option>
-        <option value="4">أبريل</option>
-        <option value="5">مايو</option>
-        <option value="6">يونيو</option>
-        <option value="7">يوليو</option>
-        <option value="8">أغسطس</option>
-        <option value="9">سبتمبر</option>
-        <option value="10">أكتوبر</option>
-        <option value="11">نوفمبر</option>
-        <option value="12">ديسمبر</option>
-      </select>
+      <div class="form-group">
+        <label>تاريخ الميلاد</label>
+        <input type="text" placeholder="YYYY-MM-DD" required />
+        <i class="fas fa-calendar"></i>
+      </div>
 
-      <select name="year" required>
-        <option value="">السنة</option>
-        <!-- توليد سنوات من 2025 إلى 1950 -->
-        <!-- مختصرة هنا، أضيف لك بعضها كمثال -->
-        <option value="2025">2025</option>
-        <option value="2024">2024</option>
-        <option value="2023">2023</option>
-        <option value="2022">2022</option>
-        <option value="2021">2021</option>
-        <option value="2020">2020</option>
-        <option value="2019">2019</option>
-        <!-- أكمل حتى 1950 إذا أردت -->
-        <option value="2000">2000</option>
-        <option value="1990">1990</option>
-        <option value="1980">1980</option>
-        <option value="1970">1970</option>
-        <option value="1960">1960</option>
-        <option value="1950">1950</option>
-      </select>
+      <div class="form-group">
+        <label>البريد الإلكتروني</label>
+        <input type="email" required />
+        <i class="fas fa-envelope"></i>
+      </div>
 
-      <input type="email" placeholder="البريد الإلكتروني" required />
-      <input type="password" placeholder="كلمة المرور" required />
-      <input type="password" placeholder="تأكيد كلمة المرور" required />
-      <button type="submit">تسجيل</button>
+      <div class="form-group">
+        <label>رقم الهاتف</label>
+        <input type="tel" required />
+        <i class="fas fa-phone"></i>
+      </div>
+
+      <div class="form-group">
+        <label>البريد الإلكتروني للاسترداد</label>
+        <input type="email" required />
+        <i class="fas fa-envelope-open"></i>
+      </div>
+
+      <div class="form-group">
+        <label>كلمة المرور</label>
+        <input type="password" required />
+        <i class="fas fa-lock"></i>
+      </div>
+
+      <div class="form-group">
+        <label>تأكيد كلمة المرور</label>
+        <input type="password" required />
+        <i class="fas fa-lock"></i>
+      </div>
+
+      <button class="register-btn" type="submit">إنشاء الحساب</button>
     </form>
   </div>
 </body>
