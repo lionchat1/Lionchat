@@ -1,21 +1,182 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>تسجيل الدخول</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
-    body { font-family: Arial; background-color: #f3f3f3; text-align: center; padding: 50px; }
-    input { padding: 10px; margin: 10px; width: 80%; max-width: 300px; }
-    button { padding: 10px 20px; margin: 10px; background-color: orange; border: none; color: white; cursor: pointer; }
-    a { display: block; margin-top: 10px; color: blue; }
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      direction: rtl;
+      overflow: hidden;
+    }
+
+    .login-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      max-width: 400px;
+      animation: fadeSlide 1s ease;
+    }
+
+    @keyframes fadeSlide {
+      from {
+        transform: translateY(40px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .login-card h2 {
+      margin-bottom: 1.5rem;
+      text-align: center;
+      color: white;
+      font-weight: 700;
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .form-group {
+      margin-bottom: 1.2rem;
+      position: relative;
+      transition: transform 0.3s ease;
+    }
+
+    .form-group:hover {
+      transform: scale(1.03);
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: #fff;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 0.75rem 2.5rem 0.75rem 1rem;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      background-color: rgba(255, 255, 255, 0.2);
+      color: white;
+      transition: 0.3s ease;
+    }
+
+    .form-group input:focus {
+      outline: none;
+      background-color: rgba(255, 255, 255, 0.3);
+      box-shadow: 0 0 8px #ffffff88;
+    }
+
+    .form-group i {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      color: #ddd;
+    }
+
+    .login-btn {
+      width: 100%;
+      padding: 0.75rem;
+      background-color: #ffffff;
+      color: #764ba2;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .login-btn:hover {
+      background-color: #f0e7ff;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px #ffffff44;
+    }
+
+    .login-btn:active {
+      transform: scale(0.97);
+    }
+
+    .footer-text {
+      margin-top: 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #eee;
+      animation: fadeIn 1.5s ease-in;
+    }
+
+    .footer-text a {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    /* اهتزاز في حالة الخطأ (يمكنك تشغيله بإضافة class shake) */
+    .shake {
+      animation: shake 0.4s;
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-5px); }
+      50% { transform: translateX(5px); }
+      75% { transform: translateX(-5px); }
+    }
   </style>
 </head>
 <body>
-  <h2>تسجيل الدخول</h2>
-  <input type="email" placeholder="البريد الإلكتروني"><br>
-  <input type="password" placeholder="كلمة المرور"><br>
-  <button>تسجيل الدخول</button>
-  <a href="#">هل نسيت كلمة السر؟</a>
-  <a href="register.html">إنشاء حساب جديد</a>
+  <div class="login-card">
+    <h2>تسجيل الدخول</h2>
+    <form onsubmit="event.preventDefault(); shakeFields();">
+      <div class="form-group" id="email-group">
+        <label for="email">البريد الإلكتروني</label>
+        <input type="email" id="email" placeholder="example@email.com" required />
+        <i class="fas fa-envelope"></i>
+      </div>
+      <div class="form-group" id="password-group">
+        <label for="password">كلمة المرور</label>
+        <input type="password" id="password" placeholder="********" required />
+        <i class="fas fa-lock"></i>
+      </div>
+      <button class="login-btn" type="submit">دخول</button>
+    </form>
+    <div class="footer-text">
+      ليس لديك حساب؟ <a href="#">سجل الآن</a>
+    </div>
+  </div>
+
+  <script>
+    function shakeFields() {
+      document.getElementById("email-group").classList.add("shake");
+      document.getElementById("password-group").classList.add("shake");
+      setTimeout(() => {
+        document.getElementById("email-group").classList.remove("shake");
+        document.getElementById("password-group").classList.remove("shake");
+      }, 400);
+    }
+  </script>
 </body>
 </html>
